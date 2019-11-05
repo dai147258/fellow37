@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration: none;
+            color: #7a9099;
+            display: inline-block;
+            line-height: 40px;
+        }
+        span{
+            margin: 0 3.6px;
+            color: cyan;
+            
+        }
+      
+      .header .toper{
+          height: 40px;
+          background-color: #333;
+        
+          font-size: 12px;
+          
+          
+
+          
+      }
+      .header .toper .container{
+          width: 1226px;
+          height: 40px;
+          margin: 0 auto;
+          
+      }
+      .toper .left{
+          width: 900px;
+          float: left;
+
+      }
+      .header .left a , .header .right a{
+          color: #b0b0b0;
+      }
+      .left>a:hover , .right>a:hover{
+          color: #fff;
+      } 
+      .toper .left .appcode{
+        position: absolute;
+        top: 40px;
+        left: 48%;
+        width: 124px;
+        height: 0;
+        background: #fff;
+        margin-left: -55px;
+        box-shadow: 0 1px 5px #aaa;
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        line-height: 1;
+        overflow: hidden;
+        transition: all 0.5s ease;
+      }
+      .left .download{
+         display: inline-block;
+         position: relative;
+ 
+      }
+      .left .download:hover .appcode{
+          display: inline-block;
+          height: 144px;
+      }
+      .left .appcode .triangle{
+          width: 0;
+          border-width: 12px;
+          border-style: solid;
+          border-color: transparent transparent yellow transparent;
+          position: absolute;
+          left: 65%;
+          margin-left: -32px;
+          top: -24px;
+      }
+      .toper .appcode img{
+          margin:18px 17px 12px;
+      }
+
+      .toper .container .right{
+          width: 262px;
+          height: 40px;
+          position: relative;
+          float:right;
+          color: #b0b0b0;
+         
+      }
+      
+      .right .info, .right .cart{
+          display: inline-block;
+          margin-left: 15px;
+          font-size: 13px;
+      }
+      .right .cart .menu{
+          display: none;
+          height: 100px;
+          width: 316px;
+          position: absolute;
+          margin-top: 12px;
+          background-color: yellow;
+          box-shadow: 0 2px 10px rgba(0, 0,0,.15);
+          top: 28px;
+          right: 0;
+          transition: all .3s ease;
+      }
+      .right .cart:hover .menu {
+          display: block;
+          background-color: #fff; 
+      }          
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="toper">
+            <div class="container">
+                <div class="left">
+                    <a href="">小米商城</a>
+                    <span>|</span>
+                    <a href="">MIUI</a>
+                    <span>|</span>
+                    <a href="">loT</a>
+                    <span>|</span>
+                    <a href="">云服务</a>
+                    <span>|</span>
+                    <a href="">金融</a>
+                    <span>|</span>
+                    <a href="">有品</a>
+                    <span>|</span>
+                    <a href="">小爱开放平台</a>
+                    <span>|</span>
+                    <a href="">企业团购</a>
+                    <span>|</span>
+                    <a href="">资质证照</a>
+                    <span>|</span>
+                    <a href="">协议规则</a>
+                    <span>|</span>
+                    <a class="download" href="">下载app
+                        <span class="appcode">
+                            <div class="triangle"></div>
+                            <img src="./img/download.png" alt="小米商城" width="90" height="90">      
+    小米商城APP                    
+                        </span>
+                    </a>
+                    <span>|</span>
+                    <a href="">Select Location</a>
+                </div> 
+                <div class="right">
+                   <div class="info">
+                    <a href="">登录</a>
+                    <span>|</span>
+                    <a href="">注册</a>
+                    <span>|</span>
+                    <a href="">消息通知</a>
+                   </div>
+                   <div class="cart">
+                       <i class="iconfont icon-icon-test">购物车(0)</i>
+                       <div class="menu"></div>
+                   </div>
+
+                 
+
+                </div>
+
+            </div>
+        </div>
+        <div class=""></div>
+    </div>
+</body>
+</html>
