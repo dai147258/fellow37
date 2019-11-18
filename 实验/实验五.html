@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>上传进度条</title>
+</head>
+
+<body>
+    <div align="center">
+        <input type="file" id="pic" name="pic" />
+        <input type="button" value="上传图片" onclick="uploadFile()" /><br />
+    </div>
+    <div id="progressBar" style="padding:0px;border:solid black 0px;visibility:hidden">
+        <table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+                <td align="center" id="progressPersent">0%</td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#000000">
+                        <tr>
+                            <td>                               
+                                <table width="1%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FF0000"
+                                    id="progress">
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" id="complete">completed</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var xhr = new XMLHttpRequest();
+        function uploadFailed(evt) {
+            document.getElementById("progressBar").style.visibility = "hidden";
+            document.getElementById("complete").innerText = "上传异常！";
+        }
+        function onprogress(evt) {
+            document.getElementById("progressBar").style.visibility = "visible";
+            var loaded = evt.loaded;       
+            var tot = evt.total;       
+            var per = Math.floor(100 * loaded / tot);   
+            //document.getElementById("son").innerHTML =per +"%" ;
+            document.getElementById("progressPersent").innerText = per + "%";
+            document.getElementById("progress").style.width = per + "%";
+        }
+        function uploadFile() {
+            var picFileList = document.getElementById("pic").files;
+            var formData = new FormData();
+            formData.append("file", picFileList[0]);
+            xhr.upload.addEventListener("progress", onprogress, false);
+            xhr.addEventListener("error", uploadFailed, false);
+            xhr.open("POST", "testuploadimg", true);
+            xhr.send(formData);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    if (xhr.responseText == "succes") {
+                        document.getElementById("progress").style.width = "100%";
+                        document.getElementById("progressPersent").innerText = "100%";
+                        document.getElementById("complete").innerText = "上传成功！";
+                    } else {
+                        document.getElementById("complete").innerText = "上传失败！";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function blo() {
+      event.keyCode = 0;
+      event.returnValue = false;
+      alert("键盘不可用");
+    }
+    document.onkeypress = blo;
+    function block(oEvent) {
+      if (window.event) {
+        oEvent = window.event;
+      }
+      if (oEvent.button == 2) {
+        alert("鼠标右键不可用");
+      }
+    }
+    document.onmousedown = block;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="utf8"/>
+    <title></title>
+    <style>
+        td {
+            width: 40px;
+            height: 40px;
+			border: 1px solid;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<div id="tbl">
+</div>
+<div id="output"></div>
+<script>
+    const mem = [];
+    const N = 8;
+    let html = '<table border="1">';
+    for (let i = 0; i < N; i++) {
+        mem[i] = new Array(N);
+        html += '<tr>';
+        for (let j = 0; j < N; j++) {
+            mem[i][j] = false;
+            html += '<td onclick="toggle(' + i + ',' + j + ')" id="e' + i + '_' + j + '"></td>';
+        }
+        html += '</tr>';
+    }
+    html += '</table>';
+    document.getElementById('tbl').innerHTML = html;
+
+    let displayOutput = function () {
+        const arr = [];
+        for (let i = 0; i < N; i++) {
+            let n = 0;
+            for (let j = 0; j < N; j++) {
+                if (mem[i][j]) {
+                    n = n | (1 << j);
+                }
+            }
+            arr.push(n.toString(16));
+        }
+        document.getElementById('output').innerText = '[0x' + arr.join(', 0x') + ']';
+    };
+
+    let toggle = function (i, j) {
+        mem[i][j] = !mem[i][j];
+        document.getElementById('e' + i + '_' + j).style.backgroundColor = mem[i][j] ? 'blue' : 'white';
+        displayOutput();
+    };
+	
+	let test = function (n) {
+		for (let i = 0; i < N; i++) {
+			if ((1 << i) & n) {
+				console.log(i);
+			}
+		}
+	};
+</script>
+</body>
+</html>

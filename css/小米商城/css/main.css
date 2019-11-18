@@ -323,3 +323,22 @@
     width: 1226px;
   }
   /* swiper end */
+  
+  /* .hero-sub .span4{
+    width: 234px;
+    background-color:#333;
+    float: left;
+    height: 170px;
+  } */
+  .hero-sub .hs-left{
+    width: 234px;
+    float: left;
+    height: 170px;
+    background-color: #5f5750;
+    overflow: hidden;
+  }
+  .hero-sub .hs-right{
+    margin-left: 14px;
+    right: 978px;
+    float: left;
+  }

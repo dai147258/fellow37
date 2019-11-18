@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            window.onload = function(){
+                var tblEle = document.getElementById("tb1");
+                var len = tblEle.tBodies[0].rows.length;
+                for(var i=0;i<len;i++){
+                    if(i%2==0){
+                        tblEle.tBodies[0].rows[i].style.backgroundColor="pink";
+                    }else{
+                        tblEle.tBodies[0].rows[i].style.backgroundColor="blue";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1" width="500" height="50" align="center" id="tb1">
+        <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>小明</td>
+                <td>男</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>小凤</td>
+                <td>女</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>小球</td>
+                <td>女</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>小绿</td>
+                <td>男</td>
+                <td>19</td>
+            </tr>
+        </tbody>
+        </table>
+    </body>
+</html>
